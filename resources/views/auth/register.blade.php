@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title')
-{{-- {{ auth()->user()->id }} --}}
 Register - PPW
 @endsection
 @section('content')
