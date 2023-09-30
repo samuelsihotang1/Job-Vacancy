@@ -29,6 +29,7 @@ class HomeController extends Controller
     $jobs = Job::get();
     return view('home', [
       'categories' => $categories,
+      'oncategory' => Null,
       'jobs' => $jobs,
     ]);
   }
@@ -39,6 +40,7 @@ class HomeController extends Controller
     $jobs = Job::where('category_id', '=', $category->id)->get();
     return view('home', [
       'categories' => $categories,
+      'oncategory' => $category,
       'jobs' => $jobs,
     ]);
   }
