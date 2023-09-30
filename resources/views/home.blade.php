@@ -117,23 +117,23 @@ Homepage - PPW
               <div class="ltn__product-tab-content-inner ltn__product-list-view">
                 <div class="row">
                   <!-- ltn__product-item -->
+                  @foreach ($jobs as $job)
                   <div class="col-lg-12">
                     <div class="ltn__product-item ltn__product-item-3">
                       <div class="product-info">
                         <div class="product-price">
                           <a href="product-details.html">
-                            <span>Kepanitiaan Bebras</span>
+                            <span>{{ $job->name }}</span>
                           </a>
                         </div>
-                        <h2 class="product-title" style="font-size: 18px;">Oleh BAAK</h2>
+                        <h2 class="product-title" style="font-size: 18px;">Oleh {{ $job->user->name }}</h2>
                         <div class="product-brief">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores sit odit
-                            nesciunt, aliquid, deleniti non et ut dolorem!</p>
+                          <p>{{$job->short_text}}</p>
                         </div>
                         <div class="product-hover-action">
                           <ul>
                             <li>
-                              <a href="#" title="Add to Cart">
+                              <a href="{{ $job->name_slug }}" title="Add to Cart">
                                 <i class="fas fa-arrow-right" alt="Arrow Icon"></i>
                               </a>
                             </li>
@@ -142,110 +142,7 @@ Homepage - PPW
                       </div>
                     </div>
                   </div>
-                  <!-- ltn__product-item -->
-                  <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-3">
-                      <div class="product-info">
-                        <div class="product-price">
-                          <a href="product-details.html">
-                            <span>Kepanitiaan Bebras</span>
-                          </a>
-                        </div>
-                        <h2 class="product-title" style="font-size: 18px;">Oleh BAAK</h2>
-                        <div class="product-brief">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores sit odit
-                            nesciunt, aliquid, deleniti non et ut dolorem!</p>
-                        </div>
-                        <div class="product-hover-action">
-                          <ul>
-                            <li>
-                              <a href="#" title="Add to Cart">
-                                <i class="fas fa-arrow-right" alt="Arrow Icon"></i>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ltn__product-item -->
-                  <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-3">
-                      <div class="product-info">
-                        <div class="product-price">
-                          <a href="product-details.html">
-                            <span>Kepanitiaan Bebras</span>
-                          </a>
-                        </div>
-                        <h2 class="product-title" style="font-size: 18px;">Oleh BAAK</h2>
-                        <div class="product-brief">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores sit odit
-                            nesciunt, aliquid, deleniti non et ut dolorem!</p>
-                        </div>
-                        <div class="product-hover-action">
-                          <ul>
-                            <li>
-                              <a href="#" title="Add to Cart">
-                                <i class="fas fa-arrow-right" alt="Arrow Icon"></i>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ltn__product-item -->
-                  <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-3">
-                      <div class="product-info">
-                        <div class="product-price">
-                          <a href="product-details.html">
-                            <span>Kepanitiaan Bebras</span>
-                          </a>
-                        </div>
-                        <h2 class="product-title" style="font-size: 18px;">Oleh BAAK</h2>
-                        <div class="product-brief">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores sit odit
-                            nesciunt, aliquid, deleniti non et ut dolorem!</p>
-                        </div>
-                        <div class="product-hover-action">
-                          <ul>
-                            <li>
-                              <a href="#" title="Add to Cart">
-                                <i class="fas fa-arrow-right" alt="Arrow Icon"></i>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- ltn__product-item -->
-                  <div class="col-lg-12">
-                    <div class="ltn__product-item ltn__product-item-3">
-                      <div class="product-info">
-                        <div class="product-price">
-                          <a href="product-details.html">
-                            <span>Kepanitiaan Bebras</span>
-                          </a>
-                        </div>
-                        <h2 class="product-title" style="font-size: 18px;">Oleh BAAK</h2>
-                        <div class="product-brief">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae asperiores sit odit
-                            nesciunt, aliquid, deleniti non et ut dolorem!</p>
-                        </div>
-                        <div class="product-hover-action">
-                          <ul>
-                            <li>
-                              <a href="#" title="Add to Cart">
-                                <i class="fas fa-arrow-right" alt="Arrow Icon"></i>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  @endforeach
                   <!--  -->
                 </div>
               </div>
@@ -263,18 +160,11 @@ Homepage - PPW
             <div class="widget ltn__menu-widget">
               <h4 class="ltn__widget-title ltn__widget-title-border">Kategori Pekerjaan</h4>
               <ul>
+                @foreach ($categories as $category)
                 <li>
-                  <a href="#">Jam Karya <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                  <a href="#">{{ $category->name }}<span><i class="fas fa-long-arrow-alt-right"></i></span></a>
                 </li>
-                <li>
-                  <a href="#">Kompetisi <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
-                </li>
-                <li>
-                  <a href="#">Organisas <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
-                </li>
-                <li>
-                  <a href="#">Asisten dosen <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
-                </li>
+                @endforeach
               </ul>
             </div>
             <div>

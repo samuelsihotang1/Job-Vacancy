@@ -15,7 +15,7 @@ return new class extends Migration
       $table->id();
       $table->foreignId('user_id')->constrained()->onDelete('CASCADE');
       $table->foreignId('job_id')->constrained()->onDelete('CASCADE');
-      $table->enum('approved', ['true', 'false'])->default('false');
+      $table->enum('approved', ['true', 'false', 'rejected'])->default('false');
       $table->enum('done', ['true', 'false'])->default('false');
       $table->timestamps();
     });
