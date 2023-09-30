@@ -6,7 +6,6 @@
 
 @section('content')
 <div class="wrapper">
-
   <div
     class="ltn__breadcrumb-area ltn__breadcrumb-area-2 ltn__breadcrumb-color-white bg-overlay-theme-black-90 bg-image plr--9---">
     <div class="container">

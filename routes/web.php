@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Job\JobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
+  // Home
   Route::get('/', [HomeController::class, 'index'])->name('home');
+
+  // Category
   Route::get('/category/{category:name_slug}', [HomeController::class, 'category'])->name('category');
+
+  // Jobs
+  Route::get('/{job:name_slug}', [JobController::class, 'index'])->name('job.index');
 });

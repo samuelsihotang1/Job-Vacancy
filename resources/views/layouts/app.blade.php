@@ -37,7 +37,7 @@
           <div class="col-lg-2">
             <div class="site-logo-wrap">
               <div class="site-logo">
-                <a href="index.html"><img src="{{ asset('img/logo-3.png') }}" alt="Logo" /></a>
+                <a href="/"><img src="{{ asset('img/logo-3.png') }}" alt="Logo" /></a>
               </div>
             </div>
           </div>
