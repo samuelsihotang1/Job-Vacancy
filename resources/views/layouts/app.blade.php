@@ -25,7 +25,12 @@
 
 <body>
   @yield('content')
-  @yield('script')
+
+
+  <!-- All JS Plugins -->
+  <script src="{{ asset('js/plugins.js') }}"></script>
+  <!-- Main JS -->
+  <script src="{{ asset('js/main.js') }}"></script>
 </body>
 
 </html>

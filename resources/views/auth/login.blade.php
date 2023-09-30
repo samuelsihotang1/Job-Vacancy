@@ -53,11 +53,3 @@ Login - PPW
   </div>
 </div>
 @endsection
-
-@section('script')
-<!-- LOGIN AREA END -->
-<!-- All JS Plugins -->
-<script src="js/plugins.js"></script>
-<!-- Main JS -->
-<script src="js/main.js"></script>
-@endsection
