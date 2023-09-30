@@ -1,76 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-Homepage - PPW
+{!! $oncategory ? "$oncategory->name - PPW" : 'Homepage - PPW' !!}
 @endsection
 
 @section('content')
 <div class="wrapper">
-
-  <!-- HEADER AREA START (header-5) -->
-  <header class="ltn__header-area ltn__header-5 ltn__header-transparent gradient-color-2">
-    <!-- ltn__header-middle-area start -->
-    <div class="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-black ltn__logo-right-menu-option plr--9---">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-2">
-            <div class="site-logo-wrap">
-              <div class="site-logo">
-                <a href="index.html"><img src="{{ asset('img/logo-3.png') }}" alt="Logo" /></a>
-              </div>
-            </div>
-          </div>
-          <div class="col header-menu-column menu-color-white">
-            <div class="header-menu d-none d-xl-block">
-              <nav>
-                <div class="ltn__main-menu">
-                  <ul style="justify-content: flex-end;">
-                    <li class="special-link"><a href="index.html">BERANDA</a></li>
-                    <li class="special-link"><a href="contact.html">KONTAK</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          </div>
-
-          <div class="ltn__header-options ltn__header-options-2">
-            <!-- header-search-1 -->
-
-            <!-- user-menu -->
-            <div class="ltn__drop-menu user-menu">
-              <ul>
-                <li>
-                  <a href="#"><i class="icon-notification"></i>
-                    <sup>2</sup></a>
-                </li>
-              </ul>
-            </div>
-            <!-- user-menu -->
-            <div class="ltn__drop-menu user-menu">
-              <ul>
-                <li>
-                  <a href="#"><i class="icon-user"></i></a>
-                  <ul>
-                    <li><a href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                      </a>
-                      <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                        @csrf
-                      </form>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ltn__header-middle-area end -->
-  </header>
-  <!-- HEADER AREA END -->
-  <div class="ltn__utilize-overlay"></div>
 
   <div
     class="ltn__breadcrumb-area ltn__breadcrumb-area-2 ltn__breadcrumb-color-white bg-overlay-theme-black-90 bg-image plr--9---">
@@ -79,7 +14,11 @@ Homepage - PPW
         <div class="col-lg-12">
           <div class="ltn__breadcrumb-inner ltn__breadcrumb-inner-2 justify-content-between">
             <div class="section-title-area ltn__section-title-2">
-              <h1 class="section-title white-color">Daftar Pekerjaan</h1>
+              <h1 class="section-title white-color">Daftar Pekerjaan
+                @if (request()->route()->named('category'))
+                <span style="font-size: 2.2rem"> - {{ $oncategory->name }}</span>
+                @endif
+              </h1>
             </div>
           </div>
         </div>
@@ -122,7 +61,7 @@ Homepage - PPW
                     <div class="ltn__product-item ltn__product-item-3">
                       <div class="product-info">
                         <div class="product-price">
-                          <a href="product-details.html">
+                          <a href="{{ $job->name_slug }}">
                             <span>{{ $job->name }}</span>
                           </a>
                         </div>
@@ -162,7 +101,13 @@ Homepage - PPW
               <ul>
                 @foreach ($categories as $category)
                 <li>
-                  <a href="{{ route('category',$category->name_slug)}}">{{ $category->name }}<span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                  <a href="{{ $category == $oncategory ? route('home') : route('category',$category->name_slug)}}" {!!
+                    $category==$oncategory ? 'style="color: #80B500"' : '' !!}>{{ $category->name }}
+                    <span>
+                      <i class="fas fa-long-arrow-alt-right" {!! $category==$oncategory ? 'style="color: #80B500"' : ''
+                        !!}></i>
+                    </span>
+                  </a>
                 </li>
                 @endforeach
               </ul>
