@@ -2,6 +2,11 @@
 @section('title')
 Login - PPW
 @endsection
+
+@section('navbar')
+NoNavbar
+@endsection
+
 @section('content')
 <!-- Body main wrapper start -->
 <div class="body-wrapper" style="background-color: #0d803d33; min-height: 100vh">
