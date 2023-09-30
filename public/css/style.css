@@ -5036,6 +5036,13 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     .special-link a:hover {
       background-color: var(--ltn__secondary-color-2);
       color: var(--white) !important; }
+      .special-link button {
+        background-color: var(--ltn__secondary-color);
+        color: var(--white) !important;
+        padding: 12px 30px !important; }
+        .special-link button:hover {
+          background-color: var(--ltn__secondary-color-2);
+          color: var(--white) !important; }
 
 .menu-color-white .ltn__main-menu > ul > li > a {
   color: var(--white); }
