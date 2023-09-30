@@ -16,7 +16,7 @@ Homepage - PPW
           <div class="col-lg-2">
             <div class="site-logo-wrap">
               <div class="site-logo">
-                <a href="index.html"><img src="img/logo-3.png" alt="Logo" /></a>
+                <a href="index.html"><img src="{{ asset('img/logo-3.png') }}" alt="Logo" /></a>
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@ Homepage - PPW
               <ul>
                 @foreach ($categories as $category)
                 <li>
-                  <a href="#">{{ $category->name }}<span><i class="fas fa-long-arrow-alt-right"></i></span></a>
+                  <a href="{{ route('category',$category->name_slug)}}">{{ $category->name }}<span><i class="fas fa-long-arrow-alt-right"></i></span></a>
                 </li>
                 @endforeach
               </ul>
@@ -177,12 +177,4 @@ Homepage - PPW
   </div>
   <!-- PRODUCT DETAILS AREA END -->
 </div>
-@endsection
-
-@section('script')
-<!-- LOGIN AREA END -->
-<!-- All JS Plugins -->
-<script src="js/plugins.js"></script>
-<!-- Main JS -->
-<script src="js/main.js"></script>
 @endsection

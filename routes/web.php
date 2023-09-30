@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
   Route::get('/', [HomeController::class, 'index'])->name('home');
+  Route::get('/category/{category:name_slug}', [HomeController::class, 'category'])->name('category');
 });

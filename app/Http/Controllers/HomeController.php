@@ -32,4 +32,14 @@ class HomeController extends Controller
       'jobs' => $jobs,
     ]);
   }
+
+  public function category(Category $category)
+  {
+    $categories = Category::get();
+    $jobs = Job::where('category_id', '=', $category->id)->get();
+    return view('home', [
+      'categories' => $categories,
+      'jobs' => $jobs,
+    ]);
+  }
 }
