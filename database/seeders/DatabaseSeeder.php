@@ -121,7 +121,7 @@ class DatabaseSeeder extends Seeder
         'user_id' => $i%4+1,
         'short_text' => $short_text[$i],
         'text' => $text[$i],
-        'category_id' => $i%3+1,
+        'category_id' => $i%4+1,
         'hours' => rand(1,9),
         'created_at' => now(),
         'updated_at' => now(),
