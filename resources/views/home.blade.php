@@ -60,7 +60,7 @@
                     <div class="ltn__product-item ltn__product-item-3">
                       <div class="product-info">
                         <div class="product-price">
-                          <a href="{{ $job->name_slug }}">
+                          <a href="{{ route('job.index',$job->name_slug) }}">
                             <span>{{ $job->name }}</span>
                           </a>
                         </div>
