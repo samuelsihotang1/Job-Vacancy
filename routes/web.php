@@ -26,5 +26,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/category/{category:name_slug}', [HomeController::class, 'category'])->name('category');
 
   // Jobs
-  Route::get('/{job:name_slug}', [JobController::class, 'index'])->name('job.index');
+  Route::get('/job/{job:name_slug}', [JobController::class, 'index'])->name('job.index');
+  Route::post('/job/{job:name_slug}', [JobController::class, 'applyJob'])->name('job.apply');
+  Route::put('/job/{job:name_slug}', [JobController::class, 'updateApply'])->name('job.update');
 });
