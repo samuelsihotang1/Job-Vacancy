@@ -129,14 +129,14 @@ class DatabaseSeeder extends Seeder
     }
 
     // Applies
-    for ($i = 0; $i < count($jobs); $i++) {
-      DB::table('applies')->insert([
-        'user_id' => $i%4+1,
-        'job_id' => $i+1,
-        'motivation' => 'income',
-        'created_at' => now(),
-        'updated_at' => now(),
-      ]);
-    }
+    // for ($i = 0; $i < count($jobs); $i++) {
+    //   DB::table('applies')->insert([
+    //     'user_id' => $i%4+1,
+    //     'job_id' => $i+1,
+    //     'motivation' => 'income',
+    //     'created_at' => now(),
+    //     'updated_at' => now(),
+    //   ]);
+    // }
   }
 }
