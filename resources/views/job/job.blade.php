@@ -37,7 +37,7 @@
                       <li>
                         <a href="#" class="theme-btn-1 btn btn-effect-1" title="Add to Cart" data-bs-toggle="modal"
                           data-bs-target="#add_to_cart_modal">
-                          <span>Kirim Lamaran</span>
+                          <span>{{ $apply ? 'Edit Lamaran' : 'Kirim Lamaran' }}</span>
                         </a>
                       </li>
                     </ul>
@@ -63,19 +63,32 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="row" style="padding: 30px">
+          <form enctype="multipart/form-data"
+            action="{{ $apply ? route('job.update', $job) : route('job.apply', $job) }}" class="row"
+            style="padding: 30px" method="POST">
+            @csrf
+            @if ($apply)
+            @method('PUT')
+            @endif
             <div>
               <label>Motivasi Anda:</label>
-              <textarea cols="30" rows="10" style="margin-bottom: 0"></textarea>
+              <textarea id="motivation" name="motivation" cols="30" rows="10" style="margin-bottom: 0"
+                required>{{ $apply ? $apply->motivation : old('motivation') }}</textarea>
             </div>
+            @error('motivation')
+            <strong style="font-size: 15px">{{ $message }}</strong>
+            @enderror
             <div class="pt-20">
               <label>Dokumen (CV, Identitas, dsb) *pdf:</label>
-              <input type="file" style="margin-bottom: 0">
+              <input type="file" id="document" name="document" accept=".pdf" style="margin-bottom: 0">
             </div>
+            @error('document')
+            <strong style="font-size: 15px">{{ $message }}</strong>
+            @enderror
             <div class="btn-wrapper pt-20">
               <button type="submit" class="btn theme-btn-1 btn-effect-1 text-uppercase">Kirim</button>
             </div>
-          </div>
+          </form>
           {{-- <div class="modal-body">
             <div class="ltn__quick-view-modal-inner">
               <div class="modal-product-item">
