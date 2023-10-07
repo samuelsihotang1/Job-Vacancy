@@ -71,7 +71,7 @@
                         <div class="product-hover-action">
                           <ul>
                             <li>
-                              <a href="{{ $job->name_slug }}" title="Add to Cart">
+                              <a href="{{ route('job.index',$job->name_slug) }}" title="Add to Cart">
                                 <i class="fas fa-arrow-right" alt="Arrow Icon"></i>
                               </a>
                             </li>
