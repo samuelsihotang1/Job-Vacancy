@@ -46,8 +46,8 @@
               <nav>
                 <div class="ltn__main-menu">
                   <ul style="justify-content: flex-end;">
-                    <li class="special-link"><a href="index.html">BERANDA</a></li>
-                    <li class="special-link"><a href="contact.html">KONTAK</a></li>
+                    <li class="special-link"><a href="{{ route('home') }}">BERANDA</a></li>
+                    <li class="special-link"><a href="#">KONTAK</a></li>
                   </ul>
                 </div>
               </nav>
@@ -55,8 +55,6 @@
           </div>
 
           <div class="ltn__header-options ltn__header-options-2">
-            <!-- header-search-1 -->
-
             <!-- user-menu -->
             <div class="ltn__drop-menu user-menu">
               <ul>
