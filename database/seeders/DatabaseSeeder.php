@@ -133,6 +133,7 @@ class DatabaseSeeder extends Seeder
       DB::table('applies')->insert([
         'user_id' => $i%4+1,
         'job_id' => $i+1,
+        'motivation' => 'income',
         'created_at' => now(),
         'updated_at' => now(),
       ]);
