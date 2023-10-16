@@ -101,9 +101,9 @@
                 @foreach ($categories as $category)
                 <li>
                   <a href="{{ $category == $oncategory ? route('home') : route('category',$category->name_slug)}}" {!!
-                    $category==$oncategory ? 'style="color: #80B500"' : '' !!}>{{ $category->name }}
+                    $category==$oncategory ? 'style="color: #0069B5"' : '' !!}>{{ $category->name }}
                     <span>
-                      <i class="fas fa-long-arrow-alt-right" {!! $category==$oncategory ? 'style="color: #80B500"' : ''
+                      <i class="fas fa-long-arrow-alt-right" {!! $category==$oncategory ? 'style="color: #0069B5"' : ''
                         !!}></i>
                     </span>
                   </a>

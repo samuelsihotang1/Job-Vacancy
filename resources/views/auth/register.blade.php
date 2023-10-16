@@ -10,7 +10,9 @@ NoNavbar
 
 @section('content')
 <!-- Body main wrapper start -->
-<div class="body-wrapper" style="background-color: #0d803d33; min-height: 100vh">
+<header class="ltn_header-area ltnheader-2 ltn_header-transparent gradient-color-3">
+  <!-- Body main wrapper start -->
+<div class="body-wrapper" style="background-color: #0d803d3; min-height: 100vh">
   <!-- LOGIN AREA START (Register) -->
   <div class="ltn__login-area pb-110" style="padding-top: 4rem;">
     <div class="container">
