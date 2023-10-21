@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Job\JobController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\SociaLiteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('auth/{provider}', [SociaLiteController::class, 'redirectToProvider']);
+Route::get('auth/{provider}/callback', [SociaLiteController::class, 'handleProviderCallback']);
 
 // Auth::routes(['verify' => true]);
 Auth::routes();
