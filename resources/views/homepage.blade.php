@@ -7,8 +7,8 @@
           <div class="ltn__breadcrumb-inner ltn__breadcrumb-inner-2 justify-content-between">
             <div class="section-title-area ltn__section-title-2">
               <h1 class="section-title white-color">Daftar Pekerjaan
-                @if (request()->route()->named('category'))
-                <span style="font-size: 2.2rem"> - {{ $oncategory->name }}</span>
+                @if (isset($category_name))
+                <span style="font-size: 2.2rem"> - {{ $category_name }}</span>
                 @endif
               </h1>
             </div>
@@ -93,10 +93,11 @@
               <ul>
                 @foreach ($categories as $category)
                 <li>
-                  <a href="{{ $category == $oncategory ? route('home') : route('category',$category->name_slug)}}" {!!
-                    $category==$oncategory ? 'style="color: #0069B5"' : '' !!}>{{ $category->name }}
+                  <a href="#" wire:click.prevent="category('{{ $category->id }}')" {!! $category->id==$category_id
+                    ? 'style="color: #0069B5"' : '' !!}>{{
+                    $category->name }}
                     <span>
-                      <i class="fas fa-long-arrow-alt-right" {!! $category==$oncategory ? 'style="color: #0069B5"' : ''
+                      <i class="fas fa-long-arrow-alt-right" {!! $category->id==$category_id ? 'style="color: #0069B5"' : ''
                         !!}></i>
                     </span>
                   </a>
