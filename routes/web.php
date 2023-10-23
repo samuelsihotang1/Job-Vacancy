@@ -25,12 +25,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
   // Home
-  // Route::get('/', [HomeController::class, 'index'])->name('home');
   Route::get('/', Homepage::class)->name('home');
-
-
-  // Category
-  Route::get('/category/{category:name_slug}', [HomeController::class, 'category'])->name('category');
 
   // Jobs
   Route::get('/job/{job:name_slug}', [JobController::class, 'index'])->name('job.index');
