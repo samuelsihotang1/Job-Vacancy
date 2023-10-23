@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
   <!-- Responsive css -->
   <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
+  @livewireStyles
 </head>
 
 <body>
@@ -91,11 +92,10 @@
   <!-- HEADER AREA END -->
   <div class="ltn__utilize-overlay"></div>
   @endif
-
-
   
   @yield('content')
 
+  @livewireScripts
   <!-- All JS Plugins -->
   <script src="{{ asset('js/plugins.js') }}"></script>
   <!-- Main JS -->
