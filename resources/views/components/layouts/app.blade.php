@@ -44,8 +44,7 @@
 <body>
 
   {{-- Navbar --}}
-  @if($navbar)
-  @else
+  @if(!isset($navbar))
   <!-- HEADER AREA START (header-5) -->
   <header class="ltn__header-area ltn__header-5 ltn__header-transparent gradient-color-2">
     <!-- ltn__header-middle-area start -->
