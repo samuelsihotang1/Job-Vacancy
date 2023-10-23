@@ -1,10 +1,3 @@
-@extends('layouts.app')
-
-@section('title')
-{!! $oncategory ? "$oncategory->name - PPW" : 'Homepage - PPW' !!}
-@endsection
-
-@section('content')
 <div class="wrapper">
   <div
     class="ltn__breadcrumb-area ltn__breadcrumb-area-2 ltn__breadcrumb-color-white bg-overlay-theme-black-90 bg-image plr--9---">
@@ -112,7 +105,7 @@
               </ul>
             </div>
             <div>
-              <input type="text" name="search" value="" placeholder="Search here..." />
+              <input type="text" wire:model.live="search" name="search" value="" placeholder="Search here..." />
             </div>
           </aside>
         </div>
@@ -121,4 +114,3 @@
   </div>
   <!-- PRODUCT DETAILS AREA END -->
 </div>
-@endsection

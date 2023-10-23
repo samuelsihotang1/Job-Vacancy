@@ -1,10 +1,27 @@
+{{--
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ $title ?? 'Page Title' }}</title>
+</head>
+
+<body>
+  {{ $slot }}
+</body>
+
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="no-js">
 
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>@yield('title', 'PPW')</title>
+  <title>{{ $title ?? 'PPW' }}</title>
   <meta name="robots" content="noindex, follow" />
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -27,7 +44,7 @@
 <body>
 
   {{-- Navbar --}}
-  @hasSection('navbar')
+  @if($navbar)
   @else
   <!-- HEADER AREA START (header-5) -->
   <header class="ltn__header-area ltn__header-5 ltn__header-transparent gradient-color-2">
@@ -92,8 +109,8 @@
   <!-- HEADER AREA END -->
   <div class="ltn__utilize-overlay"></div>
   @endif
-  
-  @yield('content')
+
+  {{ $slot }}
 
   @livewireScripts
   <!-- All JS Plugins -->

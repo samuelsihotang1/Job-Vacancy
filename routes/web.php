@@ -4,6 +4,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Job\JobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\SociaLiteController;
+use App\Livewire\Homepage;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +25,9 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
   // Home
-  Route::get('/', [HomeController::class, 'index'])->name('home');
+  // Route::get('/', [HomeController::class, 'index'])->name('home');
+  Route::get('/', Homepage::class)->name('home');
+
 
   // Category
   Route::get('/category/{category:name_slug}', [HomeController::class, 'category'])->name('category');
