@@ -53,7 +53,7 @@
                     <div class="ltn__product-item ltn__product-item-3">
                       <div class="product-info">
                         <div class="product-price">
-                          <a href="{{ route('job.index',$job->name_slug) }}">
+                          <a href="{{ route('job',$job->name_slug) }}">
                             <span>{{ $job->name }}</span>
                           </a>
                         </div>
@@ -64,7 +64,7 @@
                         <div class="product-hover-action">
                           <ul>
                             <li>
-                              <a href="{{ route('job.index',$job->name_slug) }}" title="Add to Cart">
+                              <a href="{{ route('job',$job->name_slug) }}" title="Add to Cart">
                                 <i class="fas fa-arrow-right" alt="Arrow Icon"></i>
                               </a>
                             </li>

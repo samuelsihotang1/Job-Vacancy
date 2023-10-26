@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Job\JobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\SociaLiteController;
 use App\Livewire\Homepage;
+use App\Livewire\JobController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +27,5 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/', Homepage::class)->name('home');
 
   // Jobs
-  Route::get('/job/{job:name_slug}', [JobController::class, 'index'])->name('job.index');
-  Route::post('/job/{job:name_slug}', [JobController::class, 'applyJob'])->name('job.apply');
-  Route::put('/job/{job:name_slug}', [JobController::class, 'updateApply'])->name('job.update');
+  Route::get('/job/{job:name_slug}', JobController::class)->name('job');
 });

@@ -22,7 +22,6 @@ class Homepage extends Component
     }
     return view('homepage', [
       'categories' => $categories,
-      'oncategory' => Null,
       'jobs' => $jobs,
     ])->title('Homepage - PPW');
   }

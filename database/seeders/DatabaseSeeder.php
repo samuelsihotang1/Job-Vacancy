@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
       'name' => 'BPTI Kemdikbud',
       'email' => 'admin@gmail.com',
       'password' => bcrypt('admin@gmail.com'),
-      'name_slug' => 'BPTI Kemdikbud',
+      'name_slug' => 'bpti-kemdikbud',
       'codename' => 'xxxxx'
     ]);
 
@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
       'Ketua Tim Penggalangan Dana',
       'Asisten Penelitian Biologi',
     ];
-    
+
     $text = [
       'Tugas seorang Penyusun Jadwal Acara adalah merencanakan dan menyusun jadwal acara dengan cermat. Mereka harus memastikan semua kegiatan berjalan lancar dan sesuai dengan waktu yang telah ditetapkan.',
       'Seorang Juri Lomba Menulis memiliki tanggung jawab untuk menilai dan memberikan penilaian terhadap karya tulis peserta lomba. Mereka harus memiliki pengetahuan yang baik dalam bidang penulisan.',
@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
       'Ketua Tim Penggalangan Dana memimpin upaya untuk mengumpulkan dana bagi suatu tujuan tertentu, seperti amal atau proyek organisasi.',
       'Asisten Penelitian Biologi membantu peneliti dalam eksperimen dan penelitian di bidang biologi. Mereka dapat terlibat dalam pengumpulan data dan analisis.'
     ];
-    
+
     $short_text = [
       'Tugas seorang Penyusun Jadwal Acara adalah merencanakan dan menyusun jadwal acara dengan cermat. Mereka harus memastikan semua kegiatan berjalan lancar dan sesuai dengan waktu yang telah ditetapkan.',
       'Seorang Juri Lomba Menulis memiliki tanggung jawab untuk menilai dan memberikan penilaian terhadap karya tulis peserta lomba. Mereka harus memiliki pengetahuan yang baik dalam bidang penulisan.',
@@ -113,16 +113,16 @@ class DatabaseSeeder extends Seeder
       'Ketua Tim Penggalangan Dana memimpin upaya untuk mengumpulkan dana bagi suatu tujuan tertentu, seperti amal atau proyek organisasi.',
       'Asisten Penelitian Biologi membantu peneliti dalam eksperimen dan penelitian di bidang biologi. Mereka dapat terlibat dalam pengumpulan data dan analisis.'
     ];
-    
+
     for ($i = 0; $i < count($jobs); $i++) {
       DB::table('jobs')->insert([
         'name' => $jobs[$i],
         'name_slug' => Str::of($jobs[$i])->slug('-'),
-        'user_id' => $i%4+1,
+        'user_id' => $i % 4 + 1,
         'short_text' => $short_text[$i],
         'text' => $text[$i],
-        'category_id' => $i%4+1,
-        'hours' => rand(1,9),
+        'category_id' => $i % 4 + 1,
+        'hours' => rand(1, 9),
         'created_at' => now(),
         'updated_at' => now(),
       ]);
