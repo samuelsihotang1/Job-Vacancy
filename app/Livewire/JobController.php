@@ -25,7 +25,9 @@ class JobController extends Component
   {
     $this->job = $job;
     $this->apply = Apply::where('user_id', '=', auth()->user()->id)->where('job_id', '=', $this->job->id)->first();
-    $this->motivation = $this->apply->motivation;
+    if ($this->apply) {
+      $this->motivation = $this->apply->motivation;
+    }
     $this->showApply = false;
   }
 
