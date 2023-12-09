@@ -1,14 +1,19 @@
-# Project Name
+![web-view](./Homepage.png)
 
-General project description.
+# Samuel C. A. Sihotang - Portofolio
+## Job Vacancy
+A website that can assist students in finding job vacancies across various categories.
+<br>
+<a href="https://loker.samuelsihotang.my.id/">Job Vacancy</a>
 
-Read the [detailed documentation](/docs/README.md) for futher information.
+### Made with
+- HTML
+- CSS
+- PHP
+- Laravel
+- JavaScript
+- Livewire
+- Alpine JS
+- Tailwind
 
-Find the [codebase here](/webapp).
-
-## Contributors
-
-+ NIM [Student Name](GitHub Profile URL)
-+ NIM [Student Name](GitHub Profile URL)
-+ NIM [Student Name](GitHub Profile URL)
-+ NIM [Student Name](GitHub Profile URL)
+### Give a star please
