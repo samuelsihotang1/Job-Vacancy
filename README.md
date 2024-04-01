@@ -4,7 +4,6 @@
 ## Job Vacancy
 A website that can assist students in finding job vacancies across various categories.
 <br>
-<a href="https://loker.samuelsihotang.my.id/">Job Vacancy</a>
 
 ### Made with
 - HTML
